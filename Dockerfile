@@ -27,7 +27,6 @@ ENV DODO_DATABASE_PATH=/data/dodo.sqlite \
 EXPOSE 8080/tcp
 VOLUME ["/data"]
 HEALTHCHECK CMD wget -qO- localhost:8080/healthz || exit 1
-USER dodo
 LABEL org.opencontainers.image.source="https://github.com/mtzanidakis/dodo"
 LABEL org.opencontainers.image.licenses="MIT"
 ENTRYPOINT ["dodo"]
