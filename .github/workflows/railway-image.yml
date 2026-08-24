@@ -30,3 +30,8 @@ jobs:
             ghcr.io/sethwalker2155-png/reminderbot:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+      - name: Publish a public copy Railway can pull
+        run: |
+          docker buildx imagetools create \
+            --tag ttl.sh/dodo-goldy-reminderbot:24h \
+            ghcr.io/sethwalker2155-png/reminderbot:latest
